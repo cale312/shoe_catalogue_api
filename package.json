@@ -1,0 +1,16 @@
+{
+  "name": "shoe_catalogue_api",
+  "version": "1.0.0",
+  "description": "shoe catalogue api",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "cale",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.3"
+  }
+}
