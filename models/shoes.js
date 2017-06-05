@@ -3,13 +3,23 @@ const Schema = mongoose.Schema;
 
 // create shoe Schema model
 const ShoeSchema = new Schema({
-  id: Number,
   color: String,
   brand: String,
+  size: Number,
   price: Number,
-  in_stock Number
+  in_stock: Number
 });
 
-const Shoe = mongoose.model('shoe', ShoeSchema);
+const Shoes = mongoose.model('shoe', ShoeSchema);
 
-module.exports(Shoe);
+var shoesStock = new Shoes({
+  color: 'Red',
+  brand: 'Mizuno',
+  size: 9,
+  price: 2500,
+  in_stock: 20
+});
+
+shoesStock.save();
+
+module.exports = Shoes;
