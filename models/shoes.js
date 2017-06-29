@@ -1,23 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const stock = require('./shoeStock');
 
 // create shoe Schema model
 const ShoeSchema = new Schema({
-  color: String,
-  brand: String,
-  size: Number,
-  price: Number,
-  in_stock: Number
+  stock: Array
 });
 
 const Shoes = mongoose.model('shoe', ShoeSchema);
 
 var shoesStock = new Shoes({
-  color: 'Red',
-  brand: 'Mizuno',
-  size: 9,
-  price: 2500,
-  in_stock: 20
+  stock: stock
 });
 
 shoesStock.save();

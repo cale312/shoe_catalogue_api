@@ -1,12 +1,14 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const connectDB = require('./models/connection');
 const app = express();
 
 app.use('/public', express.static('public'));
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(bodyParser.json());
+
+// change promise library
+mongoose.Promise = global.Promise;
 
 // routes
 app.use('/api', require('./routes/api'));
