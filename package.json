@@ -4,7 +4,8 @@
   "description": "shoe catalogue api",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node app.js"
   },
   "author": "cale",
   "license": "ISC",
