@@ -1,18 +1,16 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const stock = require('./shoeStock');
 
 // create shoe Schema model
 const ShoeSchema = new Schema({
-  stock: Array
+    id: Number,
+    brand: String,
+    color: String,
+    size: Number,
+    price: Number,
+    in_stock: Number
 });
 
-const Shoes = mongoose.model('shoe', ShoeSchema);
-
-var shoesStock = new Shoes({
-  stock: stock
-});
-
-shoesStock.save();
+const Shoes = mongoose.model("shoe", ShoeSchema);
 
 module.exports = Shoes;

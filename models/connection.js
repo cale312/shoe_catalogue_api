@@ -9,7 +9,4 @@ module.exports = function(app) {
   db.once('open', function() {
     console.log('We are connected');
   });
-
-  //Drop collection hook
-  mongoose.connection.collections.shoes.drop();
 }
