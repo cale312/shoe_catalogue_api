@@ -11,6 +11,10 @@ app.use(bodyParser.json());
 mongoose.Promise = global.Promise;
 
 // routes
+app.get('/', function(req,res) {
+  res.send("use '/api/shoes', to access the shoe stock");
+});
+
 app.use('/api', require('./routes/api'));
 
 connectDB(app);
