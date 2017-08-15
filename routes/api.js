@@ -12,7 +12,7 @@ router.get("/shoes", function(req, res, next) {
     if (err) {
       return next(err);
     } else {
-      res.json(result);
+      res.send(result);
     }
   });
 });
@@ -27,7 +27,7 @@ router.get("/shoes/brand/:brand", function(req, res, next) {
     if (err) {
       return next(err);
     } else {
-      res.json(result);
+      res.send(result);
     }
   });
 });
@@ -42,7 +42,7 @@ router.get("/shoes/size/:size", function(req, res, next) {
     if (err) {
       return next(err);
     } else {
-      res.json(result);
+      res.send(result);
     }
   });
 });
@@ -59,7 +59,7 @@ router.get("/shoes/brand/:brand/size/:size", function(req, res, next) {
     if (err) {
       return next(err);
     } else {
-      res.json(result);
+      res.send(result);
     }
   });
 });
@@ -74,7 +74,7 @@ router.post("/shoes", function(req, res, next) {
       if (err) {
         return next(err);
       } else {
-        res.json(result);
+        res.send(result);
       }
     });
   });
@@ -96,7 +96,7 @@ router.post("/shoes/sold/brand/:brand/size/:size", function(req, res, next) {
     if (err) {
       return next(err);
     } else {
-      res.json(result);
+      res.send(result);
     }
   });
 });
