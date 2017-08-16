@@ -8,7 +8,7 @@ const router = express.Router();
 // GET request for all the shoes in the database
 // description: return all the shoes in the database
 router.get("/shoes", function(req, res, next) {
-  Shoes.find({}).then(function(err, result) {
+  Shoes.find({}).then(function(result, err) {
     if (err) {
       return next(err);
     } else {
@@ -23,7 +23,7 @@ router.get("/shoes/brand/:brand", function(req, res, next) {
   const brand = req.params.brand;
   Shoes.find({
     brand: brand
-  }).then(function(err, result) {
+  }).then(function(result, err) {
     if (err) {
       return next(err);
     } else {
@@ -38,7 +38,7 @@ router.get("/shoes/size/:size", function(req, res, next) {
   const size = req.params.size;
   Shoes.find({
     size: size
-  }).then(function(err, result) {
+  }).then(function(result, err) {
     if (err) {
       return next(err);
     } else {
@@ -55,7 +55,7 @@ router.get("/shoes/brand/:brand/size/:size", function(req, res, next) {
   Shoes.find({
     brand: brand,
     size: size
-  }).then(function(err, result) {
+  }).then(function(result, err) {
     if (err) {
       return next(err);
     } else {
@@ -70,7 +70,7 @@ router.post("/shoes", function(req, res, next) {
   const newItem = req.body;
   const newShoe = new Shoes(newItem);
   newShoe.save().then(function() {
-    Shoes.find({}).then(function(err, result) {
+    Shoes.find({}).then(function(result, err) {
       if (err) {
         return next(err);
       } else {
@@ -92,7 +92,7 @@ router.post("/shoes/sold/brand/:brand/size/:size", function(req, res, next) {
     $inc: {
       in_stock: -1
     }
-  }).then(function(err, result) {
+  }).then(function(result, err) {
     if (err) {
       return next(err);
     } else {
