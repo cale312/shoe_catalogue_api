@@ -81,8 +81,23 @@ For updating a sold item use :
 
 ```
 $.ajax({
-    type: 'UPDATE',
+    type: 'POST',
     url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/sold/brand/' + $brand.val() + '/size/' + $size.val()
+    success: function(data) {
+      console.log(data);
+    },
+    error: function(err) {
+      console.log(err);
+    }
+  });
+```
+
+For getting a specific brand and size use :
+
+```
+$.ajax({
+    type: 'GET',
+    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/brand/' + $brand.val() + '/size/' + $size.val()
     success: function(data) {
       console.log(data);
     },
@@ -99,7 +114,7 @@ $.ajax({
 * [Mngoose](https://mongoosejs.com/) - Used for easy communication with the Mongo Database
 * [NodeJs](https://nodejs.org/en/) - Platform used to write the code
 
-## Authors
+## Author
 
 * **Zikisa Cale Sogaxa** - *Initial work* - [cale312](https://github.com/cale312)
 
