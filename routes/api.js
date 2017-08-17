@@ -7,98 +7,107 @@ const router = express.Router();
 
 // GET request for all the shoes in the database
 // description: return all the shoes in the database
-router.get("/shoes", function(req, res, next) {
-  Shoes.find({}).then(function(result, err) {
-    if (err) {
-      return next(err);
-    } else {
+router.get("/shoes", function(req, res) {
+  Shoes.find({}).then(function(result) {
       res.json(result);
-    }
-  });
+    }).catch(function(err) {
+      return next(err);
+    });
 });
 
 // GET request for specific shoe brand in the database
 // description: return only for a specified shoe brand
-router.get("/shoes/brand/:brand", function(req, res, next) {
+router.get("/shoes/brand/:brand", function(req, res) {
   const brand = req.params.brand;
   Shoes.find({
-    brand: brand
-  }).then(function(result, err) {
-    if (err) {
+      brand: brand
+    }).then(function(result) {
+      res.json(result)
+    }).catch(function(err) {
       return next(err);
-    } else {
-      res.json(result);
-    }
-  });
+    });
 });
 
 // GET request for specific shoe size in the database
 // description: return only for specified shoe size
-router.get("/shoes/size/:size", function(req, res, next) {
+router.get("/shoes/size/:size", function(req, res) {
   const size = req.params.size;
   Shoes.find({
-    size: size
-  }).then(function(result, err) {
-    if (err) {
+      size: size
+    }).then(function(result) {
+      res.json(result)
+    }).catch(function(err) {
       return next(err);
-    } else {
-      res.json(result);
-    }
-  });
+    });
 });
 
 // GET request for specific size and brand in the database
 // description: return only for specified shoe size and brand
-router.get("/shoes/brand/:brand/size/:size", function(req, res, next) {
+router.get("/shoes/brand/:brand/size/:size", function(req, res) {
   const brand = req.params.brand;
   const size = req.params.size;
   Shoes.find({
-    brand: brand,
-    size: size
-  }).then(function(result, err) {
-    if (err) {
+      brand: brand,
+      size: size
+    }).then(function(result) {
+      res.json(result)
+    }).catch(function(err) {
       return next(err);
-    } else {
-      res.json(result);
-    }
-  });
+    });
 });
 
 // POST request to add more shoes to the stock
 // description: add new shoe to the stock
-router.post("/shoes", function(req, res, next) {
+router.post("/shoes", function(req, res) {
   const newItem = req.body;
   const newShoe = new Shoes(newItem);
   newShoe.save().then(function() {
-    Shoes.find({}).then(function(result, err) {
-      if (err) {
-        return next(err);
-      } else {
-        res.json(result);
-      }
+    Shoes.find({}).then(function(result) {
+      res.json(result);
+    }).catch(function(err) {
+      return next(err);
     });
   });
 });
 
-// DELETE request for when a shoe is sold
-// description: update the database by decrementing by ONE the sold shoe searched by ID
-router.post("/shoes/sold/brand/:brand/size/:size", function(req, res, next) {
+// UPDATE request for when a shoe is sold
+// description: update the database by decrementing by the AMOUNT the shoe sold searched by the brand and size
+router.post("/shoes/sold/brand/:brand/size/:size/amount/:amount", function(req, res) {
   const brand = req.params.brand;
   const size = req.params.size;
+  const amount = req.params.amount;
   Shoes.findOneAndUpdate({
-    brand: brand,
-    size: size
-  }, {
-    $inc: {
-      in_stock: -1
-    }
-  }).then(function(result, err) {
-    if (err) {
+      brand: brand,
+      size: size
+    }, {
+      $inc: {
+        in_stock: -amount
+      }
+    }).then(function(result) {
+      res.json(result)
+    }).catch(function(err) {
       return next(err);
-    } else {
-      res.json(result);
-    }
-  });
+    });
+});
+
+// UPDATE request for when a shoe that already exists is being added
+// description: update the database by incrementing by the AMOUNT the shoe is being updated
+router.post("/shoes/update/brand/:brand/size/:size/amount/:amount", function(req, res) {
+  const brand = req.params.brand;
+  const size = req.params.size;
+  const amount = req.params.amount;
+  Shoes.findOneAndUpdate({
+      brand: brand,
+      size: size
+    }, {
+      $inc: {
+        in_stock: amount
+      }
+    }).then(function(result) {
+      res.json(result)
+    }).catch(function(err) {
+      return next(err);
+    });
 });
 
 module.exports = router;
