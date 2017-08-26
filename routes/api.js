@@ -70,15 +70,26 @@ router.post("/shoes", function(req, res) {
   });
 });
 
-// UPDATE request for when a shoe is sold
+// GET request by _id
+// description: get shoe from database using the shoe _id
+router.get("/shoes/id/:id", function(req, res) {
+  const id = req.params.id;
+  Shoes.find({
+      _id: id
+    }).then(function(result) {
+      res.json(result)
+    }).catch(function(err) {
+      return next(err);
+    });
+});
+
+// POST request for when a shoe is sold
 // description: update the database by decrementing by the AMOUNT the shoe sold searched by the brand and size
-router.post("/shoes/sold/brand/:brand/size/:size/amount/:amount", function(req, res) {
-  const brand = req.params.brand;
-  const size = req.params.size;
+router.post("/shoes/sold/id/:id/amount/:amount", function(req, res) {
+  const id = req.params.id;
   const amount = req.params.amount;
   Shoes.findOneAndUpdate({
-      brand: brand,
-      size: size
+      _id: id
     }, {
       $inc: {
         in_stock: -amount
