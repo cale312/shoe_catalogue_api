@@ -103,13 +103,11 @@ router.post("/shoes/sold/id/:id/amount/:amount", function(req, res) {
 
 // UPDATE request for when a shoe that already exists is being added
 // description: update the database by incrementing by the AMOUNT the shoe is being updated
-router.post("/shoes/update/brand/:brand/size/:size/amount/:amount", function(req, res) {
-  const brand = req.params.brand;
-  const size = req.params.size;
+router.post("/shoes/id/:id/amount/:amount", function(req, res) {
+  const id = req.params.id;
   const amount = req.params.amount;
   Shoes.findOneAndUpdate({
-      brand: brand,
-      size: size
+      _id: id
     }, {
       $inc: {
         in_stock: amount
