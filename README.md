@@ -82,7 +82,7 @@ $.ajax({
 ````javascript
 $.ajax({
   type: 'GET',
-  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/brand/' + [brand name],
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/brand/' + [brand_name],
   success: function(data) {
     console.log(data);
   },
@@ -96,7 +96,7 @@ $.ajax({
 ````javascript
 $.ajax({
   type: 'GET',
-  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/size/' + [size number],
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/size/' + [size_number],
   success: function(data) {
     console.log(data);
   },
@@ -110,7 +110,7 @@ $.ajax({
 ````javascript
 $.ajax({
   type: 'GET',
-  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/brand/' + [brand name] + '/size/' + [size number],
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/brand/' + [brand_name] + '/size/' + [size_number],
   success: function(data) {
     console.log(data);
   },
@@ -125,7 +125,7 @@ $.ajax({
 $.ajax({
   type: 'POST',
   contentType: 'application/json',
-  data: [object of the new stock item]
+  data: [object_of_the_new_stock_item]
   url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes',
   success: function(data) {
     console.log(data);
@@ -140,7 +140,7 @@ $.ajax({
 ````javascript
 $.ajax({
   type: 'POST',
-  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/sold/id/' + [shoe id] + '/amount/' + [number of stock bought],
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/sold/id/' + [shoe_id] + '/amount/' + [number_of_stock_bought],
   success: function(data) {
     console.log(data);
   },
@@ -154,7 +154,7 @@ $.ajax({
 ````javascript
 $.ajax({
   type: 'GET',
-  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/id/' + [shoe id] + '/amount/' + [number of stock bought],
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/id/' + [shoe_id] + '/amount/' + [number_of_stock_bought],
   success: function(data) {
     console.log(data);
   },
