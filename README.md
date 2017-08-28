@@ -125,7 +125,8 @@ $.ajax({
 $.ajax({
   type: 'GET',
   contentType: 'application/json',
-  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/,
+  data: [object of the new stock item]
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes',
   success: function(data) {
     console.log(data);
   },
