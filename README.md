@@ -53,3 +53,28 @@
 3. type in the terminal `npm install` to install all the dependencies in the package.json file
 	>Npm is a Node Package Manager which comes with installing the node package
 4. once all packages have been installed type in `nodemon`, it should print something like `Our app is running on http://localhost:4000`
+
+## Using the API
+
+### Prereaqusite
+
+link the jQuery script on your html file, make sure its linked before the file where you use, like this
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="[file name].js></script>
+```
+
+###### for retrieving all the stock data use :
+
+````javascript
+$.ajax({
+type: 'GET',
+url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes',
+success: function(data) {
+	console.log('data retrieve');
+},
+error: function(err) {
+ 		console.log(err);
+}
+});
+````
