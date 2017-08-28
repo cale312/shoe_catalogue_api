@@ -21,7 +21,7 @@
   1. goto the [nodejs.org](https://nodejs.org) website to download the package. Make sure you click the right one for your Operating system.
   2. goto the folder where the downloaded file is saved,
       * **Windows OS** - run the installer and follow the prompts, make sure you accept the license, click next a bunch of times than wait for the installation to finish. Once finish you will need to restart your machine.
-	  * **Linux OS** - right click on the file and click `extract here`, it will create an unzipped folder of the file, go to the folder and open the bin folder, run node.
+      * **Linux OS** - right click on the file and click `extract here`, it will create an unzipped folder of the file, go to the folder and open the bin folder, run node.
   3. in your terminal or cmd if you using windows, type the command `node -v` and press enter, you should something like `v4.2.6` which is the current version of your node
 
 ### Installing Git
