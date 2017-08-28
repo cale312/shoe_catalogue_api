@@ -68,13 +68,13 @@ link the jQuery script on your html file, make sure its linked before the file w
 
 ````javascript
 $.ajax({
-type: 'GET',
-url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes',
-success: function(data) {
-	console.log('data retrieve');
-},
-error: function(err) {
- 		console.log(err);
-}
+  type: 'GET',
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes',
+  success: function(data) {
+    console.log('data retrieve');
+  },
+  error: function(err) {
+    console.log(err);
+  }
 });
 ````
