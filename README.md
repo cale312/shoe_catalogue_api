@@ -52,7 +52,7 @@ For getting a specific brand use :
 ```
 $.ajax({
     type: 'GET',
-    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes' + $brand.val()
+    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes' + $brand.val(),
     success: function(data) {
       console.log(data);
     },
@@ -67,22 +67,7 @@ For getting a specific size use :
 ```
 $.ajax({
     type: 'GET',
-    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes' + $size.val()
-    success: function(data) {
-      console.log(data);
-    },
-    error: function(err) {
-      console.log(err);
-    }
-  });
-```
-
-For updating a sold item use :
-
-```
-$.ajax({
-    type: 'POST',
-    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/sold/brand/' + $brand.val() + '/size/' + $size.val()
+    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes' + $size.val(),
     success: function(data) {
       console.log(data);
     },
@@ -97,7 +82,38 @@ For getting a specific brand and size use :
 ```
 $.ajax({
     type: 'GET',
-    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/brand/' + $brand.val() + '/size/' + $size.val()
+    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/brand/' + $brand.val() + '/size/' + $size.val(),
+    success: function(data) {
+      console.log(data);
+    },
+    error: function(err) {
+      console.log(err);
+    }
+  });
+```
+
+
+For updating a sold item use :
+
+```
+$.ajax({
+    type: 'POST',
+    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/sold/id/ + 'shoe _id'',
+    success: function(data) {
+      console.log(data);
+    },
+    error: function(err) {
+      console.log(err);
+    }
+  });
+```
+
+For updating an item use :
+
+```
+$.ajax({
+    type: 'POST',
+    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/id/ + 'shoe _id'',
     success: function(data) {
       console.log(data);
     },
