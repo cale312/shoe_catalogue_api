@@ -64,14 +64,70 @@ link the jQuery script on your html file, make sure its linked before the file w
 <script src="[file name].js></script>
 ```
 
-###### for retrieving all the stock data use :
-
+#### For retrieving all the stock data use :
 ````javascript
 $.ajax({
   type: 'GET',
   url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes',
   success: function(data) {
-    console.log('data retrieve');
+    console.log(data);
+  },
+  error: function(err) {
+    console.log(err);
+  }
+});
+````
+
+#### For retrieving all data of specific brand name use :
+````javascript
+$.ajax({
+  type: 'GET',
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/brand/' + [brand name],
+  success: function(data) {
+    console.log(data);
+  },
+  error: function(err) {
+    console.log(err);
+  }
+});
+````
+
+#### For retrieving all data of specific size use :
+````javascript
+$.ajax({
+  type: 'GET',
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/size/' + [size number],
+  success: function(data) {
+    console.log(data);
+  },
+  error: function(err) {
+    console.log(err);
+  }
+});
+````
+
+#### For retrieving a specific item by brand and size use :
+````javascript
+$.ajax({
+  type: 'GET',
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/brand/' + [brand name] + '/size/' + [size number],
+  success: function(data) {
+    console.log(data);
+  },
+  error: function(err) {
+    console.log(err);
+  }
+});
+````
+
+#### For adding new stock item use :
+````javascript
+$.ajax({
+  type: 'GET',
+  contentType: 'application/json',
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/,
+  success: function(data) {
+    console.log(data);
   },
   error: function(err) {
     console.log(err);
