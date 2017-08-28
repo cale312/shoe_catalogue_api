@@ -123,10 +123,38 @@ $.ajax({
 #### For adding new stock item use :
 ````javascript
 $.ajax({
-  type: 'GET',
+  type: 'POST',
   contentType: 'application/json',
   data: [object of the new stock item]
   url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes',
+  success: function(data) {
+    console.log(data);
+  },
+  error: function(err) {
+    console.log(err);
+  }
+});
+````
+
+#### For updating the stock item, decrementing its stock count when sold, use :
+````javascript
+$.ajax({
+  type: 'POST',
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/sold/id/' + [shoe id] + '/amount/' + [number of stock bought],
+  success: function(data) {
+    console.log(data);
+  },
+  error: function(err) {
+    console.log(err);
+  }
+});
+````
+
+#### For updating the stock item, incrementing its stock count, use :
+````javascript
+$.ajax({
+  type: 'GET',
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/id/' + [shoe id] + '/amount/' + [number of stock bought],
   success: function(data) {
     console.log(data);
   },
