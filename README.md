@@ -56,7 +56,7 @@
 
 ## Using the API
 
-### Prereaqusite
+### Prerequsite
 
 link the jQuery script on your html file, make sure its linked before the file where you use, like this
 ```html
