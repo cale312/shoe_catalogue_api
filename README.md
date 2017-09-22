@@ -58,7 +58,7 @@ API for accessing shoe data from a mongo Data Base
 
 4. once all packages have been installed type in `nodemon`, it should print something like `Our app is running on http://localhost:4000`
 
-# For DEVELOPERS
+# For Developers
 
 ### Prerequsite
 
