@@ -39,7 +39,7 @@
 
 ### Forking and Cloning the repository
 
-1. goto the [repo](https://github.com/cale312/shoe_catalogue_api), fork it firts than click the `Clone or Download` button, you can either download the zip or click the clipboard icon to copy the file url
+1. goto the [repo](https://github.com/cale312/shoe_catalogue_api), fork it first than click the `Clone or Download` button, you can either download the zip or click the clipboard icon to copy the file url
 2. open your terminal or git bash if you are using a Windows machine
 3. navigate to the folder you want to clone the repository in
 4. type `git clone [paste the copied url]` then press enter
