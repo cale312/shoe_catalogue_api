@@ -1,6 +1,6 @@
 # Shoe Catalogue API
 
-  * API for accessing shoe data from a mongo Data Base
+API for accessing shoe data from a mongo Data Base
 
 ## What it does
 
@@ -11,8 +11,10 @@
 ## Prerequisites
   * NodeJS
   	>NodeJS is an open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side.
+
   * Git
   	>Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people
+
   * Robomongo
   	>Robomongo is a free lightweight GUI for MongoDB enthusiasts.
 
@@ -46,12 +48,13 @@
 5. you should see the folder with all the files in it
 * if you downloaded the zip file, just extract it where you want to store the folder
 
-### Running the APP
+### Running the API locally
 
-1. open your terminal or git bash if you are using a Windows machine
+1. open your terminal or git bash(for Windows)
 2. navigate to the folder you cloned
 3. type in the terminal `npm install` to install all the dependencies in the package.json file
 	>Npm is a Node Package Manager which comes with installing the node package
+
 4. once all packages have been installed type in `nodemon`, it should print something like `Our app is running on http://localhost:4000`
 
 # For DEVELOPERS
@@ -61,7 +64,7 @@
 link the jQuery script on your html file, make sure its linked before the file where you use, like this
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="[file name].js></script>
+<script src="[file name].js"></script>
 ```
 
 #### For retrieving all the stock data use :
