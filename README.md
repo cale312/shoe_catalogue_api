@@ -41,7 +41,7 @@ API for accessing shoe data from a mongo Data Base
 
 ### Forking and Cloning the repository
 
-1. goto the [repo](https://github.com/cale312/shoe_catalogue_api), fork it firts than click the `Clone or Download` button, you can either download the zip or click the clipboard icon to copy the file url
+1. goto the [repo](https://github.com/cale312/shoe_catalogue_api), fork it first than click the `Clone or Download` button, you can either download the zip or click the clipboard icon to copy the file url
 2. open your terminal or git bash if you are using a Windows machine
 3. navigate to the folder you want to clone the repository in
 4. type `git clone [paste the copied url]` then press enter
@@ -54,6 +54,7 @@ API for accessing shoe data from a mongo Data Base
 2. navigate to the folder you cloned
 3. type in the terminal `npm install` to install all the dependencies in the package.json file
 	>Npm is a Node Package Manager which comes with installing the node package
+<<<<<<< HEAD
 
 4. once all packages have been installed type in `nodemon`, it should print something like `Our app is running on http://localhost:4000`
 
@@ -166,3 +167,6 @@ $.ajax({
   }
 });
 ````
+=======
+4. once all packages have been installed now type in `nodemon` to start the app, it should print something like `Our app is running on http://localhost:4000`
+>>>>>>> 118772ef29f9a0df3573ee13e126686c00f8e480
