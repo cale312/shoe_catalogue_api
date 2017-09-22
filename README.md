@@ -1,21 +1,21 @@
 # Shoe Catalogue API
 
   * API for accessing shoe data from a mongo Data Base
-  
+
 ## What it does
 
   * You can retrieve all the shoe stock data from the Database
   * You can add new shoe stock to the Database
   * You can update an Item in the stock either by decrementing or incrementing it
-  
+
 ## Prerequisites
-  * NodeJS 
+  * NodeJS
   	>NodeJS is an open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side.
-  * Git 
+  * Git
   	>Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people
-  * Robomongo 
+  * Robomongo
   	>Robomongo is a free lightweight GUI for MongoDB enthusiasts.
-  
+
 ### Installing Node
 
   1. goto the [nodejs.org](https://nodejs.org) website to download the package. Make sure you click the right one for your Operating system.
@@ -29,7 +29,7 @@
   * if you are running a **Linux** OS in your terminal type `sudo apt-get install git` and press enter
   * if you are running a **Windows** OS, go to the [Git](https://git-scm.com/downloads) website and download the file, after download is finished, go to where the downloded file is saved and double click it, follow the prompts and wait for it to finish installing
   * once installation is finished, in your terminal or cmd type `git --version` and press enter it should print something like `git version 2.7.4`
-  
+
 ### Installing Robomongo
 
 1. go to the [Robomong](https://robomongo.org/) website and download the installer
@@ -54,7 +54,7 @@
 	>Npm is a Node Package Manager which comes with installing the node package
 4. once all packages have been installed type in `nodemon`, it should print something like `Our app is running on http://localhost:4000`
 
-## Using the API
+# For DEVELOPERS
 
 ### Prerequsite
 
