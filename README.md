@@ -166,4 +166,3 @@ $.ajax({
   }
 });
 ````
-4. once all packages have been installed now type in `nodemon` to start the app, it should print something like `Our app is running on http://localhost:4000`
